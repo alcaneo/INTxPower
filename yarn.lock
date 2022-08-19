@@ -1105,6 +1105,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.17.2":
+  version "7.18.3"
+  resolved "https://artylab.expedia.biz/api/npm/public-npm-virtual/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
+  integrity sha1-x7ZUtX9vY89/i0GKycoEQIxFefQ=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.7.6":
   version "7.17.9"
   resolved "https://artylab.expedia.biz/api/npm/public-npm-virtual/@babel/runtime/-/runtime-7.17.9.tgz#d19fbf802d01a8cb6cf053a64e472d42c434ba72"
@@ -1527,6 +1534,13 @@
     clsx "^1.1.1"
     prop-types "^15.7.2"
     react-is "^17.0.2"
+
+"@mui/icons-material@^5.8.3":
+  version "5.8.3"
+  resolved "https://artylab.expedia.biz/api/npm/public-npm-virtual/@mui/icons-material/-/icons-material-5.8.3.tgz#75c8bde42e6ba71e3871439a2b751be987343493"
+  integrity sha1-dci95C5rpx44cUOaK3Ub6Yc0NJM=
+  dependencies:
+    "@babel/runtime" "^7.17.2"
 
 "@mui/material@^5.2.2":
   version "5.2.2"

@@ -16,7 +16,7 @@ class Controllers extends Component {
     render() {
         const StyledSlider = styled(Slider)(({ theme }) => ({
             width: 100,
-            height: 500,
+            height: 620,
             margin: 0,
             marginLeft: 5,
             padding: 0,
@@ -31,89 +31,99 @@ class Controllers extends Component {
                 marginLeft: 2
             },
             [theme.breakpoints.only('xs')]: {
-                width: 70
+                width: 65,
+                height: 500
             }
         }))
 
         return (
             <Box>
-                <Box sx={{display: 'flex'}}>
-                    <Box sx={{width: '20px', height: '500px', position: 'relative'}}>
-                        <Typography style={{transform: 'rotate(-90deg)', whiteSpace: 'nowrap', position: 'absolute', left: 0, bottom: '100px', width: '20px' }}>Expected mean on outcome (standardized)</Typography>
+                <Box sx={{display: 'flex', flexDirection: 'column'}}>
+                    <Box sx={{display: 'flex', textAlign: 'center', justifyContent: 'center', marginBottom: '20px'}}>
+                        <Typography variant="subtitle1" sx={{fontSize: '1.2rem'}}>
+                            Draw the shape of the expected interaction
+                        </Typography>
                     </Box>
-                    <Box sx={{marginLeft: '30px'}}>
-                        <StyledSlider
-                            aria-label='Predictor group 1 - Moderator group A'
-                            orientation='vertical'
-                            valueLabelDisplay='auto'
-                            defaultValue={this.props.A}
-                            step={this.step}
-                            marks={this.getMarks(this.props.min, this.props.max, this.step)}
-                            min={this.props.min}
-                            max={this.props.max}
-                            onChangeCommitted={(event, value) => {
-                                this.props.onChangeCommitted('A', value)
-                            }}
-                        />
+                    <Box sx={{display: 'flex'}}>
+                        <Box sx={{width: '20px', height: '500px', position: 'relative'}}>
+                            <Typography style={{transform: 'rotate(-90deg)', whiteSpace: 'nowrap', position: 'absolute', left: 0, bottom: '25%', width: '20px', fontSize: '1.2rem' }}>
+                                Outcome (standardized mean)
+                            </Typography>
+                        </Box>
+                        <Box sx={{marginLeft: '30px'}}>
+                            <StyledSlider
+                                aria-label='Predictor group 1 - Moderator group A'
+                                orientation='vertical'
+                                valueLabelDisplay='auto'
+                                defaultValue={this.props.A}
+                                step={this.step}
+                                marks={this.getMarks(this.props.min, this.props.max, this.step)}
+                                min={this.props.min}
+                                max={this.props.max}
+                                onChangeCommitted={(event, value) => {
+                                    this.props.onChangeCommitted('A', value)
+                                }}
+                            />
+                        </Box>
+                        <Box>
+                            <StyledSlider
+                                aria-label='Predictor group 1 - Moderator group B'
+                                orientation='vertical'
+                                valueLabelDisplay='auto'
+                                defaultValue={this.props.B}
+                                step={this.step}
+                                marks
+                                min={this.props.min}
+                                max={this.props.max}
+                                onChangeCommitted={(event, value) => {
+                                    this.props.onChangeCommitted('B', value)
+                                }}
+                                color='secondary'
+                            />
+                        </Box>
+                        <Box sx={{ml: 2}}>
+                            <StyledSlider
+                                aria-label='Predictor group 2 - Moderator group A'
+                                orientation='vertical'
+                                valueLabelDisplay='auto'
+                                defaultValue={this.props.C}
+                                step={this.step}
+                                marks
+                                min={this.props.min}
+                                max={this.props.max}
+                                onChangeCommitted={(event, value) => {
+                                    this.props.onChangeCommitted('C', value)
+                                }}
+                            />
+                        </Box>
+                        <Box>
+                            <StyledSlider
+                                aria-label='Predictor group 2 - Moderator group B'
+                                orientation='vertical'
+                                valueLabelDisplay='auto'
+                                defaultValue={this.props.D}
+                                step={this.step}
+                                marks
+                                min={this.props.min}
+                                max={this.props.max}
+                                onChangeCommitted={(event, value) => {
+                                    this.props.onChangeCommitted('D', value)
+                                }}
+                                color='secondary'
+                            />
+                        </Box>
                     </Box>
-                    <Box>
-                        <StyledSlider
-                            aria-label='Predictor group 1 - Moderator group B'
-                            orientation='vertical'
-                            valueLabelDisplay='auto'
-                            defaultValue={this.props.B}
-                            step={this.step}
-                            marks
-                            min={this.props.min}
-                            max={this.props.max}
-                            onChangeCommitted={(event, value) => {
-                                this.props.onChangeCommitted('B', value)
-                            }}
-                            color='secondary'
-                        />
+                    <Box sx={{display: 'flex', paddingLeft: '50px', columnGap: '40px'}}>
+                        <Box sx={{flexGrow: 2, textAlign: 'center'}}>
+                            <Typography>Group 1</Typography>
+                        </Box>
+                        <Box sx={{flexGrow: 2, textAlign: 'center'}}>
+                            <Typography>Group 2</Typography>
+                        </Box>
                     </Box>
-                    <Box sx={{ml: 5}}>
-                        <StyledSlider
-                            aria-label='Predictor group 2 - Moderator group A'
-                            orientation='vertical'
-                            valueLabelDisplay='auto'
-                            defaultValue={this.props.C}
-                            step={this.step}
-                            marks
-                            min={this.props.min}
-                            max={this.props.max}
-                            onChangeCommitted={(event, value) => {
-                                this.props.onChangeCommitted('C', value)
-                            }}
-                        />
+                    <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <Typography sx={{paddingLeft: '60px'}}>Predictor</Typography>
                     </Box>
-                    <Box>
-                        <StyledSlider
-                            aria-label='Predictor group 2 - Moderator group B'
-                            orientation='vertical'
-                            valueLabelDisplay='auto'
-                            defaultValue={this.props.D}
-                            step={this.step}
-                            marks
-                            min={this.props.min}
-                            max={this.props.max}
-                            onChangeCommitted={(event, value) => {
-                                this.props.onChangeCommitted('D', value)
-                            }}
-                            color='secondary'
-                        />
-                    </Box>
-                </Box>
-                <Box sx={{display: 'flex', paddingLeft: '50px', columnGap: '40px'}}>
-                    <Box sx={{flexGrow: 2, textAlign: 'center'}}>
-                        <Typography>Group 1</Typography>
-                    </Box>
-                    <Box sx={{flexGrow: 2, textAlign: 'center'}}>
-                        <Typography>Group 2</Typography>
-                    </Box>
-                </Box>
-                <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    <Typography sx={{paddingLeft: '60px'}}>Predictor</Typography>
                 </Box>
             </Box>
         )
