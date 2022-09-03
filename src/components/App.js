@@ -32,9 +32,14 @@ import Controllers from './Controllers';
 import {grey, indigo, red} from '@mui/material/colors';
 import {useLocation, useNavigate} from 'react-router';
 import Algorithms from "../services/Algorithms";
+import ReactGA from "react-ga4";
+
+const GA_MEASUREMENT_ID = 'G-SLLMJ872RN'
+ReactGA.initialize(GA_MEASUREMENT_ID)
+ReactGA.send('pageview')
 
 function withNavigation(Component) {
-    return props => <Component {...props} navigate={useNavigate()} location={useLocation()}/>;
+    return props => <Component {...props} navigate={useNavigate()} location={useLocation()}/>
 }
 
 class App extends Component {
@@ -42,8 +47,8 @@ class App extends Component {
     maxValue = 1.2
 
     constructor(props) {
-        super(props);
-        const queryParameters = new URLSearchParams(this.props.location.search);
+        super(props)
+        const queryParameters = new URLSearchParams(this.props.location.search)
         this.state = {
             A: parseFloat(queryParameters.get('A')) || 0.6,
             B: parseFloat(queryParameters.get('B')) || 0.4,
@@ -62,7 +67,7 @@ class App extends Component {
         this.updateUrl()
     }
 
-    updateUrl = () => {
+    updateUrl = (eventName) => {
         this.props.navigate({
             pathname: '/',
             search: '?' + new URLSearchParams({
@@ -73,15 +78,30 @@ class App extends Component {
                 algo: this.state.algo
             }).toString()
         })
+        if (eventName) {
+            ReactGA.event(eventName)
+        }
+    }
+
+    updateParameters = (stateParameters, evenName) => {
+        this.setState(stateParameters, () => {
+            this.updateUrl(evenName)
+        })
     }
 
     changeAlgo = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value
-        this.setState({
-            algo: value
-        }, () => {
-            this.updateUrl()
-        })
+        const algo = event.target.value
+
+        this.updateParameters({
+            algo: algo
+        }, algo)
+    }
+
+    setDefaultParameters = (defaultStrategyName) => {
+        this.updateParameters(
+            Algorithms.getDefaultParametersForStrategy(defaultStrategyName),
+            defaultStrategyName
+        )
     }
 
     handleClickOpen = () => {
@@ -304,17 +324,30 @@ class App extends Component {
                                     <CardHeader title="Not sure where to start?"
                                                 subheader='Consider one of the following:'/>
                                     <Divider variant='middle'/>
-                                    <CardContent>
+                                    <CardContent sx={{
+                                        [`& button`]: {
+                                            fontSize: 'inherit'
+                                        }
+                                    }}>
                                         <Link sx={{display: 'block'}}
-                                              href={'?A=0.5&B=0.85&C=0.85&D=0.5&algo=' + Algorithms.ALGO_TWO_TAILED_TESTING}>
+                                              onClick={() => {
+                                                this.setDefaultParameters(Algorithms.DEFAULT_MEDIUM_SIZED_REVERSED_INTERACTION)
+                                              }}
+                                              component='button'>
                                             A medium-sized reversed interaction
                                         </Link>
                                         <Link sx={{display: 'block'}}
-                                              href={'?A=0.5&B=0.85&C=0.5&D=0.5&algo=' + Algorithms.ALGO_TWO_TAILED_TESTING}>
+                                              onClick={() => {
+                                                  this.setDefaultParameters(Algorithms.DEFAULT_MEDIUM_SIZED_FULLY_ATTENUATED_INTERACTION)
+                                              }}
+                                              component='button'>
                                             A medium-sized fully attenuated interaction
                                         </Link>
                                         <Link sx={{display: 'block'}}
-                                              href={'?A=0.5&B=0.85&C=0.5&D=1.0&algo=' + Algorithms.ALGO_TWO_TAILED_TESTING}>
+                                              onClick={() => {
+                                                  this.setDefaultParameters(Algorithms.DEFAULT_MEDIUM_SIZED_PARTIALLY_ATTENUATED_INTERACTION)
+                                              }}
+                                              component='button'>
                                             A medium-sized partially attenuated interaction
                                         </Link>
                                     </CardContent>
@@ -362,10 +395,11 @@ class App extends Component {
                                             assuming that there is no measurement error (measurement error would
                                             diminish effect sizes).<br/>
                                             <br/>
-                                            For the calculation involving mixed-participants designs, the by-default
-                                            correlation between the measurements is assumed to be ρ = .50 (a
-                                            conservative estimate; <Link href='http://doi.org/10.5334/joc.72'
-                                                                         target='_blank'>see Brysbaert, 2019</Link>).
+                                            For the calculation involving mixed-participants designs, sphericity is
+                                            assumed to be satisfied and the by-default correlation between the
+                                            measurements is assumed to be ρ = .50 (a conservative estimate;
+                                            <Link href='http://doi.org/10.5334/joc.72' target='_blank'>
+                                                see Brysbaert, 2019</Link>).
                                         </DialogContent>
                                     </Dialog>
                                 </CardContent>

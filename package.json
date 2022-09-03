@@ -1,5 +1,5 @@
 {
-  "name": "INT×Power",
+  "name": "intxpower",
   "version": "0.5.0",
   "private": false,
   "dependencies": {
@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-ga4": "^1.4.1",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.3",
@@ -22,9 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "publish": "aws --profile=intxpower s3 sync ./build s3://intxpower.com"
+    "eject": "react-scripts eject"
   },
+  "license": "MIT",
   "eslintConfig": {
     "extends": [
       "react-app",
