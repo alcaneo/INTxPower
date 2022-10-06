@@ -68,24 +68,24 @@ class Algorithms {
             case this.DEFAULT_MEDIUM_SIZED_FULLY_ATTENUATED_INTERACTION:
                 return {
                     A: 0.5,
-                    B: 0.85,
+                    B: 0.5,
                     C: 0.5,
-                    D: 0.5,
+                    D: 0.85,
                     algo: this.ALGO_TWO_TAILED_TESTING
                 }
             case this.DEFAULT_MEDIUM_SIZED_REVERSED_INTERACTION:
                 return {
-                    A: 0.5,
-                    B: 0.85,
-                    C: 0.85,
-                    D: 0.5,
+                    A: 0.85,
+                    B: 0.5,
+                    C: 0.5,
+                    D: 0.85,
                     algo: this.ALGO_TWO_TAILED_TESTING
                 }
             case this.DEFAULT_MEDIUM_SIZED_PARTIALLY_ATTENUATED_INTERACTION:
                 return {
                     A: 0.5,
-                    B: 0.85,
-                    C: 0.5,
+                    B: 0.5,
+                    C: 0.85,
                     D: 1.0,
                     algo: this.ALGO_TWO_TAILED_TESTING
                 }
@@ -95,11 +95,17 @@ class Algorithms {
     }
 
     static isInfinity(a, b, c, d) {
-        return (a === b && c === d) || (a === c && b === d)
+        return (a === b && c === d) ||
+            (a === c && b === d) ||
+            (this.roundToTwo(a - b) === this.roundToTwo(c - d))
     }
 
     static round(number) {
         return Math.round(number)
+    }
+
+    static roundToTwo(number) {
+        return Math.round((number + Number.EPSILON) * 100) / 100
     }
 }
 

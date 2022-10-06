@@ -1,0 +1,30 @@
+name: Deploy web app
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./build s3://intxpower.com
+          aws cloudfront create-invalidation --distribution-id E3425F2XLIYATW --paths '/*'
+          aws cloudfront create-invalidation --distribution-id E3GJ352FLTRWAZ --paths '/*'

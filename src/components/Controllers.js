@@ -41,7 +41,8 @@ class Controllers extends Component {
                 <Box sx={{display: 'flex', flexDirection: 'column'}}>
                     <Box sx={{display: 'flex', textAlign: 'center', justifyContent: 'center', marginBottom: '20px'}}>
                         <Typography variant="subtitle1" sx={{fontSize: '1.2rem'}}>
-                            Draw the shape of the expected interaction
+                            Draw the shape of the expected interaction<br />
+                            while keeping an eye on the size of the simple slopes
                         </Typography>
                     </Box>
                     <Box sx={{display: 'flex'}}>

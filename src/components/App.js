@@ -33,9 +33,14 @@ import {grey, indigo, red} from '@mui/material/colors';
 import {useLocation, useNavigate} from 'react-router';
 import Algorithms from "../services/Algorithms";
 import ReactGA from "react-ga4";
+import InfoIcon from "@mui/icons-material/Info";
 
 const GA_MEASUREMENT_ID = 'G-SLLMJ872RN'
-ReactGA.initialize(GA_MEASUREMENT_ID)
+ReactGA.initialize(GA_MEASUREMENT_ID, {
+    gtagOptions: {
+        'anonymize_ip': true
+    }
+})
 ReactGA.send('pageview')
 
 function withNavigation(Component) {
@@ -55,7 +60,8 @@ class App extends Component {
             C: parseFloat(queryParameters.get('C')) || 0.4,
             D: parseFloat(queryParameters.get('D')) || 0.6,
             algo: queryParameters.get('algo') || Algorithms.ALGO_TWO_TAILED_TESTING,
-            dialogSetOpen: false
+            dialogAboutSetOpen: false,
+            dialogCohenDSetOpen: false
         }
         this.updateUrl()
     }
@@ -104,12 +110,22 @@ class App extends Component {
         )
     }
 
-    handleClickOpen = () => {
-        this.setState({dialogSetOpen: true})
+    handleAboutClickOpen = () => {
+        this.setState({dialogAboutSetOpen: true})
+        ReactGA.send({ hitType: "pageview", page: "/about" });
     }
 
-    handleClose = () => {
-        this.setState({dialogSetOpen: false})
+    handleAboutClose = () => {
+        this.setState({dialogAboutSetOpen: false})
+    };
+
+    handleCohenDClickOpen = () => {
+        this.setState({dialogCohenDSetOpen: true})
+        ReactGA.send({ hitType: "pageview", page: "/cohend" });
+    }
+
+    handleCohenDClose = () => {
+        this.setState({dialogCohenDSetOpen: false})
     };
 
     render() {
@@ -148,7 +164,7 @@ class App extends Component {
                                                 display: 'inline-block'
                                             }}></Box>
                                             <Typography color='primary'
-                                                        sx={{display: 'inline-block', marginLeft: '10px'}}>Group
+                                                        sx={{display: 'inline-block', marginLeft: '10px', fontWeight: 'bold'}}>Group
                                                 A</Typography>
                                         </Box>
                                         <Box>
@@ -159,7 +175,7 @@ class App extends Component {
                                                 display: 'inline-block'
                                             }}></Box>
                                             <Typography color='secondary'
-                                                        sx={{display: 'inline-block', marginLeft: '10px'}}>Group
+                                                        sx={{display: 'inline-block', marginLeft: '10px', fontWeight: 'bold'}}>Group
                                                 B</Typography>
                                         </Box>
                                     </CardContent>
@@ -168,15 +184,48 @@ class App extends Component {
                                     <CardHeader title={
                                         <Typography variant="h5" component="h2">
                                             Cohen's <i>d</i>
+                                            <IconButton sx={{padding: '0px 8px'}}>
+                                                <InfoIcon onClick={this.handleCohenDClickOpen} />
+                                            </IconButton>
+                                            <Dialog onClose={this.handleCohenDClose} open={this.state.dialogCohenDSetOpen}>
+                                                <IconButton
+                                                    aria-label="close"
+                                                    onClick={this.handleCohenDClose}
+                                                    sx={{
+                                                        position: 'absolute',
+                                                        right: 8,
+                                                        top: 8,
+                                                        color: (theme) => theme.palette.grey[500],
+                                                    }}>
+                                                    <CloseIcon/>
+                                                </IconButton>
+                                                <DialogTitle>Cohen's <i>d</i></DialogTitle>
+                                                <DialogContent>
+                                                    <p>
+                                                        Our recommendations:
+                                                        <ul>
+                                                            <li>
+                                                                A small simple effect size is <i>d</i> = 0.20 (i.e., <i>r</i> = .10 or η<sub>p</sub><sup>2</sup> = .01)
+                                                            </li>
+                                                            <li>
+                                                                A medium simple effect size is <i>d</i> = 0.35 (i.e., <i>r</i> = .175 or η<sub>p</sub><sup>2</sup> = .03)
+                                                            </li>
+                                                            <li>
+                                                                A large simple effect size is <i>d</i> = 0.50 (i.e., <i>r</i> = .25 or η<sub>p</sub><sup>2</sup> = .06)
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </DialogContent>
+                                            </Dialog>
                                         </Typography>
                                     }/>
                                     <Divider variant='middle'/>
                                     <CardContent>
-                                        <Typography color='primary'>
-                                            Group A simple effect = {(this.state.C - this.state.A).toFixed(2)}
+                                        <Typography color='primary' sx={{fontWeight: 'bold'}}>
+                                            Simple effect for A = {(this.state.C - this.state.A).toFixed(2)}
                                         </Typography>
-                                        <Typography color='secondary'>
-                                            Group B simple effect = {(this.state.D - this.state.B).toFixed(2)}
+                                        <Typography color='secondary' sx={{fontWeight: 'bold'}}>
+                                            Simple effect for B = {(this.state.D - this.state.B).toFixed(2)}
                                         </Typography>
                                         <Typography sx={{color: grey[700]}}>
                                             Two-way interaction
@@ -359,13 +408,13 @@ class App extends Component {
                         <Box>
                             <Card>
                                 <CardContent sx={{textAlign: 'center'}}>
-                                    <Button variant="outlined" onClick={this.handleClickOpen}>
+                                    <Button variant="outlined" onClick={this.handleAboutClickOpen}>
                                         Information and note about this web app
                                     </Button>
-                                    <Dialog onClose={this.handleClose} open={this.state.dialogSetOpen}>
+                                    <Dialog onClose={this.handleAboutClose} open={this.state.dialogAboutSetOpen}>
                                         <IconButton
                                             aria-label="close"
-                                            onClick={this.handleClose}
+                                            onClick={this.handleAboutClose}
                                             sx={{
                                                 position: 'absolute',
                                                 right: 8,
@@ -377,29 +426,57 @@ class App extends Component {
                                         </IconButton>
                                         <DialogTitle>Information and note about this web app</DialogTitle>
                                         <DialogContent>
-                                            The article associated with this app can be found here [the hyperlink will
-                                            be provided later obviously]<br/>
-                                            <br/>
-                                            We recommend using the following empirically derived benchmarks to describe
-                                            small, medium, and large simple effects: d = 0.20, 0.35, and 0.50,
-                                            respectively (<Link href='https://doi.org/10.3389/fpsyg.2019.00813'
-                                                                target='_blank'>see Schäfer & Schwarz, 2019</Link>)<br/>
-                                            <br/>
-                                            The calculation of the required sample size assumes linearity, approximate
-                                            multivariate normality, homogeneity of variance across subgroups,
-                                            independence of residual error, lack of severe multicollinearity, and equal
-                                            sample size across the 2 × 2 subgroups.<br/>
-                                            <br/>
-                                            The app can be used to calculate the required sample size to detect two-way
-                                            interactions involving continuous and/or dichotomous predictors/moderators,
-                                            assuming that there is no measurement error (measurement error would
-                                            diminish effect sizes).<br/>
-                                            <br/>
-                                            For the calculation involving mixed-participants designs, sphericity is
-                                            assumed to be satisfied and the by-default correlation between the
-                                            measurements is assumed to be ρ = .50 (a conservative estimate;
-                                            <Link href='http://doi.org/10.5334/joc.72' target='_blank'>
-                                                see Brysbaert, 2019</Link>).
+                                            <p>
+                                                The article associated with this app can be
+                                                found here: <Link href='https://osf.io/xhe3u/' target='_blank'>
+                                                    https://osf.io/xhe3u/
+                                                </Link>
+                                            </p>
+                                            <p>
+                                                Conducting an appropriate power analysis for first-order interactions is difficult, because the
+                                                expected effect size of an interaction depends on its shape and the size of the simple slopes.
+                                                INT×Power enables users to draw the shape of their first-order interaction while keeping an
+                                                eye on the effect sizes of the simple slopes. It will calculate the sample size needed to reach
+                                                a power of .80 with and without using three strategies to maximize power: (i) preregistering
+                                                a one-tailed test, (ii) using a mixed design (i.e., the predictor or the moderator is a within-
+                                                participant variable), and (iii) preregistering contrast analysis for a fully attenuated
+                                                interaction (using specific contrast weights rather than using the product term between the
+                                                moderator and predictor).
+                                            </p>
+                                            <p>
+                                                We recommend using the following empirically derived benchmarks to describe
+                                                small, medium, and large simple effects: <i>d</i> = 0.20, 0.35, and 0.50,
+                                                respectively (<Link href='https://doi.org/10.3389/fpsyg.2019.00813'
+                                                                    target='_blank'>see Schäfer & Schwarz, 2019</Link>)
+                                            </p>
+                                            <p>
+                                                The calculation of the required sample size assumes linearity, approximate
+                                                multivariate normality, homogeneity of variance across subgroups,
+                                                independence of residual error, lack of severe multicollinearity, and equal
+                                                sample size across the 2 × 2 subgroups.
+                                            </p>
+                                            <p>
+                                                The app can be used to calculate the required sample size to detect two-way
+                                                interactions involving continuous and/or dichotomous predictors/moderators,
+                                                assuming that there is no measurement error (measurement error would
+                                                diminish effect sizes).
+                                            </p>
+                                            <p>
+                                                For the calculation involving mixed-participants designs, sphericity is
+                                                assumed to be satisfied and the by-default correlation between the
+                                                measurements is assumed to be ρ = .50 (a conservative
+                                                estimate; <Link href='http://doi.org/10.5334/joc.72' target='_blank'>
+                                                    see Brysbaert, 2019</Link>).
+                                            </p>
+                                            <p>
+                                                The app can be used to calculate the required sample size to detect two-way interactions
+                                                involving both dichotomous predictors/moderators, and continuous predictors/moderators
+                                                (at ± 1 SD), although other applications
+                                                such as <Link href='https://david-baranger.shinyapps.io/InteractionPoweR_analytic/' target='_blank'>
+                                                    InteractionPoweR
+                                                </Link> may offer more flexibility (e.g., allowing users to change the value of
+                                                measurement error and correlations between variables).
+                                            </p>
                                         </DialogContent>
                                     </Dialog>
                                 </CardContent>
@@ -409,7 +486,8 @@ class App extends Component {
                             <Card>
                                 <CardContent>
                                     Please cite as follows: Sommet, N., Weissman, D. L., Cheutin, N., & Elliot, A. J. (2022).<br />
-                                    How many participants do I need to test an interaction? Conducting an appropriate power analysis and achieving sufficient power to detect an interaction.
+                                    How many participants do I need to test an interaction? Conducting an appropriate power analysis and achieving sufficient power to detect an interaction.<br />
+                                    <Link href='https://doi.org/10.31219/osf.io/xhe3u' target='_blank'>https://doi.org/10.31219/osf.io/xhe3u</Link>
                                 </CardContent>
                             </Card>
                         </Box>
