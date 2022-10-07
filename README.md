@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# INT×Power
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Info about the app
 
-## Available Scripts
+The article associated with this app can be found here: [https://osf.io/xhe3u/](https://osf.io/xhe3u/)
 
-In the project directory, you can run:
+Conducting an appropriate power analysis for first-order interactions is difficult, because the expected effect size of an interaction depends on its shape and the size of the simple slopes. INT×Power enables users to draw the shape of their first-order interaction while keeping an eye on the effect sizes of the simple slopes. It will calculate the sample size needed to reach a power of .80 with and without using three strategies to maximize power: (i) preregistering a one-tailed test, (ii) using a mixed design (i.e., the predictor or the moderator is a within- participant variable), and (iii) preregistering contrast analysis for a fully attenuated interaction (using specific contrast weights rather than using the product term between the moderator and predictor).
 
-### `yarn start`
+We recommend using the following empirically derived benchmarks to describe small, medium, and large simple effects: d = 0.20, 0.35, and 0.50, respectively ([see Schäfer & Schwarz, 2019](https://doi.org/10.3389/fpsyg.2019.00813))
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The calculation of the required sample size assumes linearity, approximate multivariate normality, homogeneity of variance across subgroups, independence of residual error, lack of severe multicollinearity, and equal sample size across the 2 × 2 subgroups.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The app can be used to calculate the required sample size to detect two-way interactions involving continuous and/or dichotomous predictors/moderators, assuming that there is no measurement error (measurement error would diminish effect sizes).
 
-### `yarn test`
+For the calculation involving mixed-participants designs, sphericity is assumed to be satisfied and the by-default correlation between the measurements is assumed to be ρ = .50 (a conservative estimate; [see Brysbaert, 2019](http://doi.org/10.5334/joc.72)).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app can be used to calculate the required sample size to detect two-way interactions involving both dichotomous predictors/moderators, and continuous predictors/moderators (at ± 1 SD), although other applications such as [InteractionPoweR](https://david-baranger.shinyapps.io/InteractionPoweR_analytic/) may offer more flexibility (e.g., allowing users to change the value of measurement error and correlations between variables).
 
-### `yarn build`
+## Run the app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+yarn install
+```
 
-### `yarn eject`
+### Run the app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Simply start the app with following command:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contributing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
