@@ -9,10 +9,6 @@ import {
 class Controllers extends Component {
     step = 0.05
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const StyledSlider = styled(Slider)(({ theme }) => ({
             width: 100,
