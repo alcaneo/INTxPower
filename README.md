@@ -8,7 +8,7 @@ Conducting an appropriate power analysis for first-order interactions is difficu
 
 We recommend using the following empirically derived benchmarks to describe small, medium, and large simple effects: d = 0.20, 0.35, and 0.50, respectively ([see Schäfer & Schwarz, 2019](https://doi.org/10.3389/fpsyg.2019.00813))
 
-The calculation of the required sample size assumes linearity, approximate multivariate normality, homogeneity of variance across subgroups, independence of residual error, lack of severe multicollinearity, and equal sample size across the 2 × 2 subgroups.
+The calculation of the required sample size assumes approximate multivariate normality, homogeneity of variance across subgroups, independence of residual error, lack of severe multicollinearity, and equal sample size across the 2 × 2 subgroups.
 
 The app can be used to calculate the required sample size to detect two-way interactions involving continuous and/or dichotomous predictors/moderators, assuming that there is no measurement error (measurement error would diminish effect sizes).
 

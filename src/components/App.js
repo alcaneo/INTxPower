@@ -449,7 +449,7 @@ class App extends Component {
                                                                     target='_blank'>see Schäfer & Schwarz, 2019</Link>)
                                             </p>
                                             <p>
-                                                The calculation of the required sample size assumes linearity, approximate
+                                                The calculation of the required sample size assumes approximate
                                                 multivariate normality, homogeneity of variance across subgroups,
                                                 independence of residual error, lack of severe multicollinearity, and equal
                                                 sample size across the 2 × 2 subgroups.
