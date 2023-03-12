@@ -9,7 +9,7 @@ class Score extends Component {
             this.props.B,
             this.props.C,
             this.props.D,
-            this.props.magicNumber
+            this.props.targetPower
         )
 
         return (

@@ -59,7 +59,7 @@ class App extends Component {
             B: parseFloat(queryParameters.get('B')) || 0.4,
             C: parseFloat(queryParameters.get('C')) || 0.4,
             D: parseFloat(queryParameters.get('D')) || 0.6,
-            magicNumber: parseInt(queryParameters.get('magicNumber')) || 80,
+            targetPower: parseInt(queryParameters.get('targetPower')) || 80,
             algo: queryParameters.get('algo') || Algorithms.ALGO_BETWEEN_TWO_TAILED_FACTORIAL,
             dialogAboutSetOpen: false,
             dialogCohenDSetOpen: false,
@@ -83,7 +83,7 @@ class App extends Component {
                 B: this.state.B,
                 C: this.state.C,
                 D: this.state.D,
-                magicNumber: this.state.magicNumber,
+                targetPower: this.state.targetPower,
                 algo: this.state.algo
             }).toString()
         })
@@ -124,7 +124,7 @@ class App extends Component {
 
     handleMagicNumberClickOpen = () => {
         this.setState({dialogMagicNumberSetOpen: true})
-        ReactGA.send({ hitType: "pageview", page: "/magic-number" });
+        ReactGA.send({ hitType: "pageview", page: "/change-target-power" });
     }
 
     handleMagicNumberClose = () => {
@@ -163,7 +163,7 @@ class App extends Component {
                                 this.handleMagicNumberClickOpen()
                             }}
                                   component='button'>
-                                .{this.state.magicNumber} <EditIcon/>
+                                .{this.state.targetPower} <EditIcon/>
                             </Link> (α = .05)
                         </Typography>
                         <Dialog onClose={this.handleMagicNumberClose} open={this.state.dialogMagicNumberSetOpen}>
@@ -179,13 +179,13 @@ class App extends Component {
                             >
                                 <CloseIcon/>
                             </IconButton>
-                            <DialogTitle sx={{marginRight: '25px'}}>Change magic number</DialogTitle>
+                            <DialogTitle sx={{marginRight: '25px'}}>Change target power</DialogTitle>
                             <DialogContent>
                                 <TextField
                                     sx={{marginTop: '10px'}}
-                                    label="Magic number"
+                                    label="Target power"
                                     type="number"
-                                    defaultValue={this.state.magicNumber}
+                                    defaultValue={this.state.targetPower}
                                     helperText="Between 1 and 99"
                                     InputProps={{ inputProps: { min: 1, max: 99 } }}
                                     InputLabelProps={{
@@ -207,7 +207,7 @@ class App extends Component {
 
                                     if (newMagicNumber && newMagicNumber >= 1 && newMagicNumber <= 99) {
                                         this.updateParameters({
-                                            magicNumber: newMagicNumber
+                                            targetPower: newMagicNumber
                                         }, "updateMagicNumber")
                                     }
                                     this.handleMagicNumberClose()
@@ -317,7 +317,7 @@ class App extends Component {
                                                C={this.state.C}
                                                D={this.state.D}
                                                algo={this.state.algo}
-                                               magicNumber={this.state.magicNumber}
+                                               targetPower={this.state.targetPower}
                                         />
                                     </CardContent>
                                 </Card>

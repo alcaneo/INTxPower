@@ -1,6 +1,6 @@
 import {Box, IconButton, Tooltip, Typography} from "@mui/material";
 import InfoIcon from '@mui/icons-material/Info';
-import data from '../resources/magicNumbers.json';
+import data from '../resources/targetPowers.json';
 
 class Algorithms {
     static ALGO_BETWEEN_TWO_TAILED_FACTORIAL = 'betweenTwoTailedFactorial'
@@ -13,104 +13,108 @@ class Algorithms {
     static DEFAULT_TYPICAL_FULLY_ATTENUATED_INTERACTION = 'typicalFullyAttenuatedInteraction'
     static DEFAULT_TYPICAL_PARTIALLY_ATTENUATED_INTERACTION = 'typicalPartiallyAttenuatedInteraction'
 
-    static compute(algo, a, b, c, d, magicNumber) {
+    static compute(algo, a, b, c, d, targetPower) {
         switch (algo) {
             case this.ALGO_BETWEEN_ONE_TAILED_FACTORIAL:
                 return this.computeBetweenOneTailedFactorialAlgo(a,
                     b,
                     c,
                     d,
-                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_ONE_TAILED_FACTORIAL, magicNumber))
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_ONE_TAILED_FACTORIAL, targetPower))
             case this.ALGO_MIXED_TWO_TAILED_FACTORIAL:
                 return this.computeMixedTwoTailedFactorialAlgo(a,
                     b,
                     c,
                     d,
-                    this.getMagicNumberForAlgo(this.ALGO_MIXED_TWO_TAILED_FACTORIAL, magicNumber))
+                    this.getMagicNumberForAlgo(this.ALGO_MIXED_TWO_TAILED_FACTORIAL, targetPower))
             case this.ALGO_MIXED_ONE_TAILED_FACTORIAL:
                 return this.computeMixedOneTailedFactorialAlgo(a,
                     b,
                     c,
                     d,
-                    this.getMagicNumberForAlgo(this.ALGO_MIXED_ONE_TAILED_FACTORIAL, magicNumber))
+                    this.getMagicNumberForAlgo(this.ALGO_MIXED_ONE_TAILED_FACTORIAL, targetPower))
             case this.ALGO_BETWEEN_TWO_TAILED_CONTRAST:
                 return this.computeBetweenTwoTailedContrastAlgo(a,
                     b,
                     c,
                     d,
-                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_TWO_TAILED_CONTRAST, magicNumber))
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_TWO_TAILED_CONTRAST, targetPower))
             case this.ALGO_BETWEEN_ONE_TAILED_CONTRAST:
                 return this.computeBetweenOneTailedContrastAlgo(a,
                     b,
                     c,
                     d,
-                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_ONE_TAILED_CONTRAST, magicNumber))
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_ONE_TAILED_CONTRAST, targetPower))
             case this.ALGO_BETWEEN_TWO_TAILED_FACTORIAL:
             default:
                 return this.computeBetweenTwoTailedFactorialAlgo(a,
                     b,
                     c,
                     d,
-                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_TWO_TAILED_FACTORIAL, magicNumber))
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_TWO_TAILED_FACTORIAL, targetPower))
         }
     }
 
-    static getMagicNumberForAlgo(algo, magicNumber) {
-        return data[(magicNumber / 100)][algo]
+    static getMagicNumberForAlgo(algo, targetPower) {
+        return data[(targetPower / 100)][algo]
     }
 
-    static computeBetweenTwoTailedFactorialAlgo(a, b, c, d, magicNumber) {
+    static computeBetweenTwoTailedFactorialAlgo(a, b, c, d, targetPower) {
         if (this.isInfinity(a, b, c, d)) {
-            return 'Infinity'
+            return this.getNotApplicableComponent()
         }
-        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
+        return this.round(targetPower / Math.pow((a - b - c + d), 2))
     }
 
-    static computeBetweenOneTailedFactorialAlgo(a, b, c, d, magicNumber) {
+    static computeBetweenOneTailedFactorialAlgo(a, b, c, d, targetPower) {
         if (this.isInfinity(a, b, c, d)) {
-            return 'Infinity'
+            return this.getNotApplicableComponent()
         }
-        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
+        return this.round(targetPower / Math.pow((a - b - c + d), 2))
     }
 
-    static computeMixedTwoTailedFactorialAlgo(a, b, c, d, magicNumber) {
+    static computeMixedTwoTailedFactorialAlgo(a, b, c, d, targetPower) {
         if (this.isInfinity(a, b, c, d)) {
-            return 'Infinity'
+            return this.getNotApplicableComponent()
         }
-        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
+        return this.round(targetPower / Math.pow((a - b - c + d), 2))
     }
 
-    static computeMixedOneTailedFactorialAlgo(a, b, c, d, magicNumber) {
+    static computeMixedOneTailedFactorialAlgo(a, b, c, d, targetPower) {
         if (this.isInfinity(a, b, c, d)) {
-            return 'Infinity'
+            return this.getNotApplicableComponent()
         }
-        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
+        return this.round(targetPower / Math.pow((a - b - c + d), 2))
     }
 
-    static computeBetweenTwoTailedContrastAlgo(a, b, c, d, magicNumber) {
-        return this.computeBetweenTailedContrastAlgo(a, b, c, d, magicNumber)
+    static computeBetweenTwoTailedContrastAlgo(a, b, c, d, targetPower) {
+        return this.computeBetweenTailedContrastAlgo(a, b, c, d, targetPower)
     }
 
-    static computeBetweenOneTailedContrastAlgo(a, b, c, d, magicNumber) {
-        return this.computeBetweenTailedContrastAlgo(a, b, c, d, magicNumber)
+    static computeBetweenOneTailedContrastAlgo(a, b, c, d, targetPower) {
+        return this.computeBetweenTailedContrastAlgo(a, b, c, d, targetPower)
     }
 
-    static computeBetweenTailedContrastAlgo(a, b, c, d, magicNumber) {
+    static computeBetweenTailedContrastAlgo(a, b, c, d, targetPower) {
         if ((a === b && b === c && c !== d) ||
             (a === b && b === d && d !== c) ||
             (a === c && c === d && d !== b) ||
             (b === c && c === d && d !== a)) {
-            return this.round(magicNumber / Math.pow((a - b - c + d), 2))
+            return this.round(targetPower / Math.pow((a - b - c + d), 2))
         } else {
-            return <Tooltip title='Not applicable, the interaction is not a fully attenuated interaction'>
-                <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
-                    <Typography variant='h2' align='center'>n/a</Typography>
-                    <IconButton>
-                        <InfoIcon />
-                    </IconButton>
-                </Box>
-            </Tooltip>
+            return this.getNotApplicableComponent('the interaction is not a fully attenuated interaction')
         }
+    }
+
+    static getNotApplicableComponent(title = 'the pattern does not correspond to an interaction') {
+        return <Tooltip title={`Not applicable, ${title}`}>
+            <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
+                <Typography variant='h2' align='center'>n/a</Typography>
+                <IconButton>
+                    <InfoIcon />
+                </IconButton>
+            </Box>
+        </Tooltip>
     }
 
     static getDefaultParametersForStrategy(strategyName) {
