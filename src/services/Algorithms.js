@@ -1,5 +1,6 @@
 import {Box, IconButton, Tooltip, Typography} from "@mui/material";
 import InfoIcon from '@mui/icons-material/Info';
+import data from '../resources/magicNumbers.json';
 
 class Algorithms {
     static ALGO_BETWEEN_TWO_TAILED_FACTORIAL = 'betweenTwoTailedFactorial'
@@ -12,58 +13,86 @@ class Algorithms {
     static DEFAULT_TYPICAL_FULLY_ATTENUATED_INTERACTION = 'typicalFullyAttenuatedInteraction'
     static DEFAULT_TYPICAL_PARTIALLY_ATTENUATED_INTERACTION = 'typicalPartiallyAttenuatedInteraction'
 
-    static compute(algo, a, b, c, d) {
+    static compute(algo, a, b, c, d, magicNumber) {
         switch (algo) {
             case this.ALGO_BETWEEN_ONE_TAILED_FACTORIAL:
-                return this.computeBetweenOneTailedFactorialAlgo(a, b, c, d)
+                return this.computeBetweenOneTailedFactorialAlgo(a,
+                    b,
+                    c,
+                    d,
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_ONE_TAILED_FACTORIAL, magicNumber))
             case this.ALGO_MIXED_TWO_TAILED_FACTORIAL:
-                return this.computeMixedTwoTailedFactorialAlgo(a, b, c, d)
+                return this.computeMixedTwoTailedFactorialAlgo(a,
+                    b,
+                    c,
+                    d,
+                    this.getMagicNumberForAlgo(this.ALGO_MIXED_TWO_TAILED_FACTORIAL, magicNumber))
             case this.ALGO_MIXED_ONE_TAILED_FACTORIAL:
-                return this.computeMixedOneTailedFactorialAlgo(a, b, c, d)
+                return this.computeMixedOneTailedFactorialAlgo(a,
+                    b,
+                    c,
+                    d,
+                    this.getMagicNumberForAlgo(this.ALGO_MIXED_ONE_TAILED_FACTORIAL, magicNumber))
             case this.ALGO_BETWEEN_TWO_TAILED_CONTRAST:
-                return this.computeBetweenTwoTailedContrastAlgo(a, b, c, d)
+                return this.computeBetweenTwoTailedContrastAlgo(a,
+                    b,
+                    c,
+                    d,
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_TWO_TAILED_CONTRAST, magicNumber))
             case this.ALGO_BETWEEN_ONE_TAILED_CONTRAST:
-                return this.computeBetweenOneTailedContrastAlgo(a, b, c, d)
+                return this.computeBetweenOneTailedContrastAlgo(a,
+                    b,
+                    c,
+                    d,
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_ONE_TAILED_CONTRAST, magicNumber))
             case this.ALGO_BETWEEN_TWO_TAILED_FACTORIAL:
             default:
-                return this.computeBetweenTwoTailedFactorialAlgo(a, b, c, d)
+                return this.computeBetweenTwoTailedFactorialAlgo(a,
+                    b,
+                    c,
+                    d,
+                    this.getMagicNumberForAlgo(this.ALGO_BETWEEN_TWO_TAILED_FACTORIAL, magicNumber))
         }
     }
 
-    static computeBetweenTwoTailedFactorialAlgo(a, b, c, d) {
+    static getMagicNumberForAlgo(algo, magicNumber) {
+        return data[(magicNumber / 100)][algo]
+    }
+
+    static computeBetweenTwoTailedFactorialAlgo(a, b, c, d, magicNumber) {
         if (this.isInfinity(a, b, c, d)) {
             return 'Infinity'
         }
-        return this.round(125.44 / Math.pow((a - b - c + d), 2))
+        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
     }
 
-    static computeBetweenOneTailedFactorialAlgo(a, b, c, d) {
+    static computeBetweenOneTailedFactorialAlgo(a, b, c, d, magicNumber) {
         if (this.isInfinity(a, b, c, d)) {
             return 'Infinity'
         }
-        return this.round(98.8036 / Math.pow((a - b - c + d), 2))
+        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
     }
 
-    static computeMixedTwoTailedFactorialAlgo(a, b, c, d) {
+    static computeMixedTwoTailedFactorialAlgo(a, b, c, d, magicNumber) {
         if (this.isInfinity(a, b, c, d)) {
             return 'Infinity'
         }
-        return this.round(31.36 / Math.pow((a - b - c + d), 2))
+        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
     }
 
-    static computeMixedOneTailedFactorialAlgo(a, b, c, d) {
+    static computeMixedOneTailedFactorialAlgo(a, b, c, d, magicNumber) {
         if (this.isInfinity(a, b, c, d)) {
             return 'Infinity'
         }
-        return this.round(24.7009 / Math.pow((a - b - c + d), 2))
+        return this.round(magicNumber / Math.pow((a - b - c + d), 2))
     }
 
-    static computeBetweenTwoTailedContrastAlgo(a, b, c, d) {
-        return this.computeBetweenTailedContrastAlgo(a, b, c, d, 41.813)
+    static computeBetweenTwoTailedContrastAlgo(a, b, c, d, magicNumber) {
+        return this.computeBetweenTailedContrastAlgo(a, b, c, d, magicNumber)
     }
 
-    static computeBetweenOneTailedContrastAlgo(a, b, c, d) {
-        return this.computeBetweenTailedContrastAlgo(a, b, c, d, 32.93453)
+    static computeBetweenOneTailedContrastAlgo(a, b, c, d, magicNumber) {
+        return this.computeBetweenTailedContrastAlgo(a, b, c, d, magicNumber)
     }
 
     static computeBetweenTailedContrastAlgo(a, b, c, d, magicNumber) {

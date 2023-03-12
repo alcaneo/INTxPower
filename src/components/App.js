@@ -9,7 +9,7 @@ import {
     CardContent,
     CardHeader,
     createTheme,
-    Dialog,
+    Dialog, DialogActions,
     DialogContent,
     DialogTitle,
     Divider,
@@ -22,11 +22,12 @@ import {
     Table,
     TableBody, tableBodyClasses,
     TableCell, tableCellClasses, TableHead, tableHeadClasses,
-    TableRow, tableRowClasses,
+    TableRow, tableRowClasses, TextField,
     ThemeProvider,
     Typography
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import EditIcon from '@mui/icons-material/Edit';
 import Controllers from './Controllers';
 import {grey, indigo, red} from '@mui/material/colors';
 import {useLocation, useNavigate} from 'react-router';
@@ -58,9 +59,11 @@ class App extends Component {
             B: parseFloat(queryParameters.get('B')) || 0.4,
             C: parseFloat(queryParameters.get('C')) || 0.4,
             D: parseFloat(queryParameters.get('D')) || 0.6,
+            magicNumber: parseInt(queryParameters.get('magicNumber')) || 80,
             algo: queryParameters.get('algo') || Algorithms.ALGO_BETWEEN_TWO_TAILED_FACTORIAL,
             dialogAboutSetOpen: false,
-            dialogCohenDSetOpen: false
+            dialogCohenDSetOpen: false,
+            dialogMagicNumberSetOpen: false
         }
         this.updateUrl()
     }
@@ -80,6 +83,7 @@ class App extends Component {
                 B: this.state.B,
                 C: this.state.C,
                 D: this.state.D,
+                magicNumber: this.state.magicNumber,
                 algo: this.state.algo
             }).toString()
         })
@@ -118,6 +122,15 @@ class App extends Component {
         this.setState({dialogAboutSetOpen: false})
     };
 
+    handleMagicNumberClickOpen = () => {
+        this.setState({dialogMagicNumberSetOpen: true})
+        ReactGA.send({ hitType: "pageview", page: "/magic-number" });
+    }
+
+    handleMagicNumberClose = () => {
+        this.setState({dialogMagicNumberSetOpen: false})
+    };
+
     handleCohenDClickOpen = () => {
         this.setState({dialogCohenDSetOpen: true})
         ReactGA.send({ hitType: "pageview", page: "/cohend" });
@@ -145,8 +158,62 @@ class App extends Component {
                 <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', rowGap: '30px'}}>
                     <Box sx={{display: 'flex', textAlign: 'center', justifyContent: 'center'}}>
                         <Typography variant='h5'>
-                            INT×Power: Finding the target sample size to detect a two-way interaction with power .80 (α = .05)
+                            INT×Power: Finding the target sample size to detect a two-way interaction with power &nbsp;
+                            <Link sx={{textDecoration: 'none', color: 'inherit', font: 'inherit'}} onClick={() => {
+                                this.handleMagicNumberClickOpen()
+                            }}
+                                  component='button'>
+                                .{this.state.magicNumber} <EditIcon/>
+                            </Link> (α = .05)
                         </Typography>
+                        <Dialog onClose={this.handleMagicNumberClose} open={this.state.dialogMagicNumberSetOpen}>
+                            <IconButton
+                                aria-label="close"
+                                onClick={this.handleMagicNumberClose}
+                                sx={{
+                                    position: 'absolute',
+                                    right: 8,
+                                    top: 8,
+                                    color: (theme) => theme.palette.grey[500],
+                                }}
+                            >
+                                <CloseIcon/>
+                            </IconButton>
+                            <DialogTitle sx={{marginRight: '25px'}}>Change magic number</DialogTitle>
+                            <DialogContent>
+                                <TextField
+                                    sx={{marginTop: '10px'}}
+                                    label="Magic number"
+                                    type="number"
+                                    defaultValue={this.state.magicNumber}
+                                    helperText="Between 1 and 99"
+                                    InputProps={{ inputProps: { min: 1, max: 99 } }}
+                                    InputLabelProps={{
+                                        shrink: true,
+                                    }}
+                                    onChange={e => {
+                                        this.setState({
+                                            newMagicNumber: e.target.value
+                                        })
+                                    }}
+                                />
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={() => {
+                                    this.handleMagicNumberClose()
+                                }}>Cancel</Button>
+                                <Button onClick={() => {
+                                    const newMagicNumber = this.state.newMagicNumber
+
+                                    if (newMagicNumber && newMagicNumber >= 1 && newMagicNumber <= 99) {
+                                        this.updateParameters({
+                                            magicNumber: newMagicNumber
+                                        }, "updateMagicNumber")
+                                    }
+                                    this.handleMagicNumberClose()
+                                }}>Update</Button>
+                            </DialogActions>
+                        </Dialog>
                     </Box>
                     <Box sx={{display: 'flex', justifyContent: 'center', gap: '30px', flexWrap: 'wrap'}}>
                         <Box>
@@ -245,8 +312,13 @@ class App extends Component {
                                     <CardHeader title='REQUIRED OVERALL SAMPLE SIZE'/>
                                     <Divider variant='middle'/>
                                     <CardContent>
-                                        <Score A={this.state.A} B={this.state.B} C={this.state.C} D={this.state.D}
-                                               algo={this.state.algo}/>
+                                        <Score A={this.state.A}
+                                               B={this.state.B}
+                                               C={this.state.C}
+                                               D={this.state.D}
+                                               algo={this.state.algo}
+                                               magicNumber={this.state.magicNumber}
+                                        />
                                     </CardContent>
                                 </Card>
                             </Box>

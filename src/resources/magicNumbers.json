@@ -1,0 +1,794 @@
+{
+  "0.01": {
+    "betweenTwoTailedFactorial": 2.147372237,
+    "betweenOneTailedFactorial": 7.427758807,
+    "mixedTwoTailedFactorial": 0.536843059,
+    "mixedOneTailedFactorial": 1.856939702,
+    "betweenTwoTailedContrast": 0.715790746,
+    "betweenOneTailedContrast": 2.475919602
+  },
+  "0.02": {
+    "betweenTwoTailedFactorial": 0.140621732,
+    "betweenOneTailedFactorial": 2.673210751,
+    "mixedTwoTailedFactorial": 0.035155433,
+    "mixedOneTailedFactorial": 0.668302688,
+    "betweenTwoTailedContrast": 0.046873911,
+    "betweenOneTailedContrast": 0.89107025
+  },
+  "0.03": {
+    "betweenTwoTailedFactorial": 0.10037844,
+    "betweenOneTailedFactorial": 0.88957801,
+    "mixedTwoTailedFactorial": 0.02509461,
+    "mixedOneTailedFactorial": 0.222394503,
+    "betweenTwoTailedContrast": 0.03345948,
+    "betweenOneTailedContrast": 0.296526003
+  },
+  "0.04": {
+    "betweenTwoTailedFactorial": 0.700997132,
+    "betweenOneTailedFactorial": 0.178712731,
+    "mixedTwoTailedFactorial": 0.175249283,
+    "mixedOneTailedFactorial": 0.044678183,
+    "betweenTwoTailedContrast": 0.233665711,
+    "betweenOneTailedContrast": 0.05957091
+  },
+  "0.05": {
+    "betweenTwoTailedFactorial": 1.589075783,
+    "betweenOneTailedFactorial": 3.42801e-7,
+    "mixedTwoTailedFactorial": 0.397268946,
+    "mixedOneTailedFactorial": 8.57003e-8,
+    "betweenTwoTailedContrast": 0.529691928,
+    "betweenOneTailedContrast": 1.14267e-7
+  },
+  "0.06": {
+    "betweenTwoTailedFactorial": 2.627335034,
+    "betweenOneTailedFactorial": 0.130252868,
+    "mixedTwoTailedFactorial": 0.656833759,
+    "mixedOneTailedFactorial": 0.032563217,
+    "betweenTwoTailedContrast": 0.875778345,
+    "betweenOneTailedContrast": 0.043417623
+  },
+  "0.07": {
+    "betweenTwoTailedFactorial": 3.751333254,
+    "betweenOneTailedFactorial": 0.458106818,
+    "mixedTwoTailedFactorial": 0.937833314,
+    "mixedOneTailedFactorial": 0.114526705,
+    "betweenTwoTailedContrast": 1.250444418,
+    "betweenOneTailedContrast": 0.152702273
+  },
+  "0.08": {
+    "betweenTwoTailedFactorial": 4.927129171,
+    "betweenOneTailedFactorial": 0.921050499,
+    "mixedTwoTailedFactorial": 1.231782293,
+    "mixedOneTailedFactorial": 0.230262625,
+    "betweenTwoTailedContrast": 1.64237639,
+    "betweenOneTailedContrast": 0.307016833
+  },
+  "0.09": {
+    "betweenTwoTailedFactorial": 6.135429253,
+    "betweenOneTailedFactorial": 1.481039992,
+    "mixedTwoTailedFactorial": 1.533857313,
+    "mixedOneTailedFactorial": 0.370259998,
+    "betweenTwoTailedContrast": 2.045143084,
+    "betweenOneTailedContrast": 0.493679997
+  },
+  "0.1": {
+    "betweenTwoTailedFactorial": 7.364676451,
+    "betweenOneTailedFactorial": 2.113516232,
+    "mixedTwoTailedFactorial": 1.841169113,
+    "mixedOneTailedFactorial": 0.528379058,
+    "betweenTwoTailedContrast": 2.45489215,
+    "betweenOneTailedContrast": 0.704505411
+  },
+  "0.11": {
+    "betweenTwoTailedFactorial": 8.607695979,
+    "betweenOneTailedFactorial": 2.801899429,
+    "mixedTwoTailedFactorial": 2.151923995,
+    "mixedOneTailedFactorial": 0.700474857,
+    "betweenTwoTailedContrast": 2.869231993,
+    "betweenOneTailedContrast": 0.933966476
+  },
+  "0.12": {
+    "betweenTwoTailedFactorial": 9.859931786,
+    "betweenOneTailedFactorial": 3.53459865,
+    "mixedTwoTailedFactorial": 2.464982947,
+    "mixedOneTailedFactorial": 0.883649663,
+    "betweenTwoTailedContrast": 3.286643929,
+    "betweenOneTailedContrast": 1.17819955
+  },
+  "0.13": {
+    "betweenTwoTailedFactorial": 11.11846,
+    "betweenOneTailedFactorial": 4.303282577,
+    "mixedTwoTailedFactorial": 2.779614999,
+    "mixedOneTailedFactorial": 1.075820644,
+    "betweenTwoTailedContrast": 3.706153332,
+    "betweenOneTailedContrast": 1.434427526
+  },
+  "0.14": {
+    "betweenTwoTailedFactorial": 12.38140899,
+    "betweenOneTailedFactorial": 5.10182795,
+    "mixedTwoTailedFactorial": 3.095352249,
+    "mixedOneTailedFactorial": 1.275456987,
+    "betweenTwoTailedContrast": 4.127136331,
+    "betweenOneTailedContrast": 1.700609317
+  },
+  "0.15": {
+    "betweenTwoTailedFactorial": 13.64760454,
+    "betweenOneTailedFactorial": 5.925653111,
+    "mixedTwoTailedFactorial": 3.411901136,
+    "mixedOneTailedFactorial": 1.481413278,
+    "betweenTwoTailedContrast": 4.549201515,
+    "betweenOneTailedContrast": 1.975217704
+  },
+  "0.16": {
+    "betweenTwoTailedFactorial": 14.91634527,
+    "betweenOneTailedFactorial": 6.771280731,
+    "mixedTwoTailedFactorial": 3.729086317,
+    "mixedOneTailedFactorial": 1.692820183,
+    "betweenTwoTailedContrast": 4.97211509,
+    "betweenOneTailedContrast": 2.257093577
+  },
+  "0.17": {
+    "betweenTwoTailedFactorial": 16.18725661,
+    "betweenOneTailedFactorial": 7.636042359,
+    "mixedTwoTailedFactorial": 4.046814152,
+    "mixedOneTailedFactorial": 1.90901059,
+    "betweenTwoTailedContrast": 5.395752203,
+    "betweenOneTailedContrast": 2.545347453
+  },
+  "0.18": {
+    "betweenTwoTailedFactorial": 17.4601936,
+    "betweenOneTailedFactorial": 8.517873681,
+    "mixedTwoTailedFactorial": 4.365048399,
+    "mixedOneTailedFactorial": 2.12946842,
+    "betweenTwoTailedContrast": 5.820064532,
+    "betweenOneTailedContrast": 2.839291227
+  },
+  "0.19": {
+    "betweenTwoTailedFactorial": 18.73517485,
+    "betweenOneTailedFactorial": 9.415169506,
+    "mixedTwoTailedFactorial": 4.683793713,
+    "mixedOneTailedFactorial": 2.353792377,
+    "betweenTwoTailedContrast": 6.245058284,
+    "betweenOneTailedContrast": 3.138389835
+  },
+  "0.2": {
+    "betweenTwoTailedFactorial": 20.01233704,
+    "betweenOneTailedFactorial": 10.32667908,
+    "mixedTwoTailedFactorial": 5.003084261,
+    "mixedOneTailedFactorial": 2.581669769,
+    "betweenTwoTailedContrast": 6.670779014,
+    "betweenOneTailedContrast": 3.442226359
+  },
+  "0.21": {
+    "betweenTwoTailedFactorial": 21.29190303,
+    "betweenOneTailedFactorial": 11.2514292,
+    "mixedTwoTailedFactorial": 5.322975757,
+    "mixedOneTailedFactorial": 2.8128573,
+    "betweenTwoTailedContrast": 7.09730101,
+    "betweenOneTailedContrast": 3.7504764
+  },
+  "0.22": {
+    "betweenTwoTailedFactorial": 22.57415937,
+    "betweenOneTailedFactorial": 12.18866697,
+    "mixedTwoTailedFactorial": 5.643539842,
+    "mixedOneTailedFactorial": 3.047166741,
+    "betweenTwoTailedContrast": 7.524719789,
+    "betweenOneTailedContrast": 4.062888989
+  },
+  "0.23": {
+    "betweenTwoTailedFactorial": 23.85944028,
+    "betweenOneTailedFactorial": 13.13781652,
+    "mixedTwoTailedFactorial": 5.964860071,
+    "mixedOneTailedFactorial": 3.284454131,
+    "betweenTwoTailedContrast": 7.953146761,
+    "betweenOneTailedContrast": 4.379272175
+  },
+  "0.24": {
+    "betweenTwoTailedFactorial": 25.14811622,
+    "betweenOneTailedFactorial": 14.09844606,
+    "mixedTwoTailedFactorial": 6.287029056,
+    "mixedOneTailedFactorial": 3.524611514,
+    "betweenTwoTailedContrast": 8.382705408,
+    "betweenOneTailedContrast": 4.699482019
+  },
+  "0.25": {
+    "betweenTwoTailedFactorial": 26.44058564,
+    "betweenOneTailedFactorial": 15.07024232,
+    "mixedTwoTailedFactorial": 6.610146409,
+    "mixedOneTailedFactorial": 3.76756058,
+    "betweenTwoTailedContrast": 8.813528546,
+    "betweenOneTailedContrast": 5.023414107
+  },
+  "0.26": {
+    "betweenTwoTailedFactorial": 27.73726914,
+    "betweenOneTailedFactorial": 16.05299083,
+    "mixedTwoTailedFactorial": 6.934317286,
+    "mixedOneTailedFactorial": 4.013247708,
+    "betweenTwoTailedContrast": 9.245756381,
+    "betweenOneTailedContrast": 5.350996943
+  },
+  "0.27": {
+    "betweenTwoTailedFactorial": 29.03860539,
+    "betweenOneTailedFactorial": 17.04656034,
+    "mixedTwoTailedFactorial": 7.259651349,
+    "mixedOneTailedFactorial": 4.261640086,
+    "betweenTwoTailedContrast": 9.679535132,
+    "betweenOneTailedContrast": 5.682186781
+  },
+  "0.28": {
+    "betweenTwoTailedFactorial": 30.34504823,
+    "betweenOneTailedFactorial": 18.05089062,
+    "mixedTwoTailedFactorial": 7.586262056,
+    "mixedOneTailedFactorial": 4.512722655,
+    "betweenTwoTailedContrast": 10.11501608,
+    "betweenOneTailedContrast": 6.01696354
+  },
+  "0.29": {
+    "betweenTwoTailedFactorial": 31.65706475,
+    "betweenOneTailedFactorial": 19.06598273,
+    "mixedTwoTailedFactorial": 7.914266189,
+    "mixedOneTailedFactorial": 4.766495682,
+    "betweenTwoTailedContrast": 10.55235492,
+    "betweenOneTailedContrast": 6.355327576
+  },
+  "0.3": {
+    "betweenTwoTailedFactorial": 32.97513421,
+    "betweenOneTailedFactorial": 20.09189137,
+    "mixedTwoTailedFactorial": 8.243783552,
+    "mixedOneTailedFactorial": 5.022972844,
+    "betweenTwoTailedContrast": 10.9917114,
+    "betweenOneTailedContrast": 6.697297125
+  },
+  "0.31": {
+    "betweenTwoTailedFactorial": 34.29974729,
+    "betweenOneTailedFactorial": 21.12871879,
+    "mixedTwoTailedFactorial": 8.574936821,
+    "mixedOneTailedFactorial": 5.282179697,
+    "betweenTwoTailedContrast": 11.4332491,
+    "betweenOneTailedContrast": 7.042906262
+  },
+  "0.32": {
+    "betweenTwoTailedFactorial": 35.63140599,
+    "betweenOneTailedFactorial": 22.17660988,
+    "mixedTwoTailedFactorial": 8.907851497,
+    "mixedOneTailedFactorial": 5.54415247,
+    "betweenTwoTailedContrast": 11.87713533,
+    "betweenOneTailedContrast": 7.392203294
+  },
+  "0.33": {
+    "betweenTwoTailedFactorial": 36.97062374,
+    "betweenOneTailedFactorial": 23.23574845,
+    "mixedTwoTailedFactorial": 9.242655936,
+    "mixedOneTailedFactorial": 5.808937113,
+    "betweenTwoTailedContrast": 12.32354125,
+    "betweenOneTailedContrast": 7.745249484
+  },
+  "0.34": {
+    "betweenTwoTailedFactorial": 38.31792585,
+    "betweenOneTailedFactorial": 24.3063542,
+    "mixedTwoTailedFactorial": 9.579481463,
+    "mixedOneTailedFactorial": 6.076588549,
+    "betweenTwoTailedContrast": 12.77264195,
+    "betweenOneTailedContrast": 8.102118066
+  },
+  "0.35": {
+    "betweenTwoTailedFactorial": 39.67385014,
+    "betweenOneTailedFactorial": 25.38868044,
+    "mixedTwoTailedFactorial": 9.918462534,
+    "mixedOneTailedFactorial": 6.347170109,
+    "betweenTwoTailedContrast": 13.22461671,
+    "betweenOneTailedContrast": 8.462893479
+  },
+  "0.36": {
+    "betweenTwoTailedFactorial": 41.03894779,
+    "betweenOneTailedFactorial": 26.48301243,
+    "mixedTwoTailedFactorial": 10.25973695,
+    "mixedOneTailedFactorial": 6.620753107,
+    "betweenTwoTailedContrast": 13.67964926,
+    "betweenOneTailedContrast": 8.827670809
+  },
+  "0.37": {
+    "betweenTwoTailedFactorial": 42.41378441,
+    "betweenOneTailedFactorial": 27.58966614,
+    "mixedTwoTailedFactorial": 10.6034461,
+    "mixedOneTailedFactorial": 6.897416535,
+    "betweenTwoTailedContrast": 14.13792814,
+    "betweenOneTailedContrast": 9.19655538
+  },
+  "0.38": {
+    "betweenTwoTailedFactorial": 43.79894116,
+    "betweenOneTailedFactorial": 28.7089875,
+    "mixedTwoTailedFactorial": 10.94973529,
+    "mixedOneTailedFactorial": 7.177246876,
+    "betweenTwoTailedContrast": 14.59964705,
+    "betweenOneTailedContrast": 9.569662502
+  },
+  "0.39": {
+    "betweenTwoTailedFactorial": 45.19501613,
+    "betweenOneTailedFactorial": 29.84135199,
+    "mixedTwoTailedFactorial": 11.29875403,
+    "mixedOneTailedFactorial": 7.460337999,
+    "betweenTwoTailedContrast": 15.06500538,
+    "betweenOneTailedContrast": 9.947117332
+  },
+  "0.4": {
+    "betweenTwoTailedFactorial": 46.60262577,
+    "betweenOneTailedFactorial": 30.98716457,
+    "mixedTwoTailedFactorial": 11.65065644,
+    "mixedOneTailedFactorial": 7.746791141,
+    "betweenTwoTailedContrast": 15.53420859,
+    "betweenOneTailedContrast": 10.32905486
+  },
+  "0.41": {
+    "betweenTwoTailedFactorial": 48.02240653,
+    "betweenOneTailedFactorial": 32.14685989,
+    "mixedTwoTailedFactorial": 12.00560163,
+    "mixedOneTailedFactorial": 8.036714973,
+    "betweenTwoTailedContrast": 16.00746884,
+    "betweenOneTailedContrast": 10.71561996
+  },
+  "0.42": {
+    "betweenTwoTailedFactorial": 49.45501662,
+    "betweenOneTailedFactorial": 33.32090289,
+    "mixedTwoTailedFactorial": 12.36375415,
+    "mixedOneTailedFactorial": 8.330225722,
+    "betweenTwoTailedContrast": 16.48500554,
+    "betweenOneTailedContrast": 11.10696763
+  },
+  "0.43": {
+    "betweenTwoTailedFactorial": 50.90113792,
+    "betweenOneTailedFactorial": 34.5097895,
+    "mixedTwoTailedFactorial": 12.72528448,
+    "mixedOneTailedFactorial": 8.627447375,
+    "betweenTwoTailedContrast": 16.96704597,
+    "betweenOneTailedContrast": 11.50326317
+  },
+  "0.44": {
+    "betweenTwoTailedFactorial": 52.36147807,
+    "betweenOneTailedFactorial": 35.71404776,
+    "mixedTwoTailedFactorial": 13.09036952,
+    "mixedOneTailedFactorial": 8.92851194,
+    "betweenTwoTailedContrast": 17.45382602,
+    "betweenOneTailedContrast": 11.90468259
+  },
+  "0.45": {
+    "betweenTwoTailedFactorial": 53.83677271,
+    "betweenOneTailedFactorial": 36.93423909,
+    "mixedTwoTailedFactorial": 13.45919318,
+    "mixedOneTailedFactorial": 9.233559772,
+    "betweenTwoTailedContrast": 17.9455909,
+    "betweenOneTailedContrast": 12.31141303
+  },
+  "0.46": {
+    "betweenTwoTailedFactorial": 55.32778796,
+    "betweenOneTailedFactorial": 38.17095987,
+    "mixedTwoTailedFactorial": 13.83194699,
+    "mixedOneTailedFactorial": 9.542739967,
+    "betweenTwoTailedContrast": 18.44259599,
+    "betweenOneTailedContrast": 12.72365329
+  },
+  "0.47": {
+    "betweenTwoTailedFactorial": 56.83532308,
+    "betweenOneTailedFactorial": 39.42484329,
+    "mixedTwoTailedFactorial": 14.20883077,
+    "mixedOneTailedFactorial": 9.856210823,
+    "betweenTwoTailedContrast": 18.94510769,
+    "betweenOneTailedContrast": 13.14161443
+  },
+  "0.48": {
+    "betweenTwoTailedFactorial": 58.36021336,
+    "betweenOneTailedFactorial": 40.69656148,
+    "mixedTwoTailedFactorial": 14.59005334,
+    "mixedOneTailedFactorial": 10.17414037,
+    "betweenTwoTailedContrast": 19.45340445,
+    "betweenOneTailedContrast": 13.56552049
+  },
+  "0.49": {
+    "betweenTwoTailedFactorial": 59.90333328,
+    "betweenOneTailedFactorial": 41.98682787,
+    "mixedTwoTailedFactorial": 14.97583332,
+    "mixedOneTailedFactorial": 10.49670697,
+    "betweenTwoTailedContrast": 19.96777776,
+    "betweenOneTailedContrast": 13.99560929
+  },
+  "0.5": {
+    "betweenTwoTailedFactorial": 61.4656,
+    "betweenOneTailedFactorial": 43.2964,
+    "mixedTwoTailedFactorial": 15.3664,
+    "mixedOneTailedFactorial": 10.8241,
+    "betweenTwoTailedContrast": 20.48853333,
+    "betweenOneTailedContrast": 14.43213333
+  },
+  "0.51": {
+    "betweenTwoTailedFactorial": 63.04797713,
+    "betweenOneTailedFactorial": 44.62608253,
+    "mixedTwoTailedFactorial": 15.76199428,
+    "mixedOneTailedFactorial": 11.15652063,
+    "betweenTwoTailedContrast": 21.01599238,
+    "betweenOneTailedContrast": 14.87536084
+  },
+  "0.52": {
+    "betweenTwoTailedFactorial": 64.65147887,
+    "betweenOneTailedFactorial": 45.97673074,
+    "mixedTwoTailedFactorial": 16.16286972,
+    "mixedOneTailedFactorial": 11.49418269,
+    "betweenTwoTailedContrast": 21.55049296,
+    "betweenOneTailedContrast": 15.32557691
+  },
+  "0.53": {
+    "betweenTwoTailedFactorial": 66.27717459,
+    "betweenOneTailedFactorial": 47.34925438,
+    "mixedTwoTailedFactorial": 16.56929365,
+    "mixedOneTailedFactorial": 11.83731359,
+    "betweenTwoTailedContrast": 22.09239153,
+    "betweenOneTailedContrast": 15.78308479
+  },
+  "0.54": {
+    "betweenTwoTailedFactorial": 67.92619387,
+    "betweenOneTailedFactorial": 48.74462196,
+    "mixedTwoTailedFactorial": 16.98154847,
+    "mixedOneTailedFactorial": 12.18615549,
+    "betweenTwoTailedContrast": 22.64206462,
+    "betweenOneTailedContrast": 16.24820732
+  },
+  "0.55": {
+    "betweenTwoTailedFactorial": 69.59973206,
+    "betweenOneTailedFactorial": 50.16386568,
+    "mixedTwoTailedFactorial": 17.39993302,
+    "mixedOneTailedFactorial": 12.54096642,
+    "betweenTwoTailedContrast": 23.19991069,
+    "betweenOneTailedContrast": 16.72128856
+  },
+  "0.56": {
+    "betweenTwoTailedFactorial": 71.29905646,
+    "betweenOneTailedFactorial": 51.60808677,
+    "mixedTwoTailedFactorial": 17.82476412,
+    "mixedOneTailedFactorial": 12.90202169,
+    "betweenTwoTailedContrast": 23.76635215,
+    "betweenOneTailedContrast": 17.20269559
+  },
+  "0.57": {
+    "betweenTwoTailedFactorial": 73.02551315,
+    "betweenOneTailedFactorial": 53.07846157,
+    "mixedTwoTailedFactorial": 18.25637829,
+    "mixedOneTailedFactorial": 13.26961539,
+    "betweenTwoTailedContrast": 24.34183772,
+    "betweenOneTailedContrast": 17.69282052
+  },
+  "0.58": {
+    "betweenTwoTailedFactorial": 74.78053464,
+    "betweenOneTailedFactorial": 54.57624837,
+    "mixedTwoTailedFactorial": 18.69513366,
+    "mixedOneTailedFactorial": 13.64406209,
+    "betweenTwoTailedContrast": 24.92684488,
+    "betweenOneTailedContrast": 18.19208279
+  },
+  "0.59": {
+    "betweenTwoTailedFactorial": 76.5656484,
+    "betweenOneTailedFactorial": 56.10279503,
+    "mixedTwoTailedFactorial": 19.1414121,
+    "mixedOneTailedFactorial": 14.02569876,
+    "betweenTwoTailedContrast": 25.5218828,
+    "betweenOneTailedContrast": 18.70093168
+  },
+  "0.6": {
+    "betweenTwoTailedFactorial": 78.38248638,
+    "betweenOneTailedFactorial": 57.65954758,
+    "mixedTwoTailedFactorial": 19.5956216,
+    "mixedOneTailedFactorial": 14.4148869,
+    "betweenTwoTailedContrast": 26.12749546,
+    "betweenOneTailedContrast": 19.21984919
+  },
+  "0.61": {
+    "betweenTwoTailedFactorial": 80.23279581,
+    "betweenOneTailedFactorial": 59.24805994,
+    "mixedTwoTailedFactorial": 20.05819895,
+    "mixedOneTailedFactorial": 14.81201499,
+    "betweenTwoTailedContrast": 26.74426527,
+    "betweenOneTailedContrast": 19.74935331
+  },
+  "0.62": {
+    "betweenTwoTailedFactorial": 82.11845122,
+    "betweenOneTailedFactorial": 60.87000488,
+    "mixedTwoTailedFactorial": 20.5296128,
+    "mixedOneTailedFactorial": 15.21750122,
+    "betweenTwoTailedContrast": 27.37281707,
+    "betweenOneTailedContrast": 20.29000163
+  },
+  "0.63": {
+    "betweenTwoTailedFactorial": 84.04146819,
+    "betweenOneTailedFactorial": 62.52718645,
+    "mixedTwoTailedFactorial": 21.01036705,
+    "mixedOneTailedFactorial": 15.63179661,
+    "betweenTwoTailedContrast": 28.01382273,
+    "betweenOneTailedContrast": 20.84239548
+  },
+  "0.64": {
+    "betweenTwoTailedFactorial": 86.00401882,
+    "betweenOneTailedFactorial": 64.22155418,
+    "mixedTwoTailedFactorial": 21.5010047,
+    "mixedOneTailedFactorial": 16.05538855,
+    "betweenTwoTailedContrast": 28.66800627,
+    "betweenOneTailedContrast": 21.40718473
+  },
+  "0.65": {
+    "betweenTwoTailedFactorial": 88.00844944,
+    "betweenOneTailedFactorial": 65.95521914,
+    "mixedTwoTailedFactorial": 22.00211236,
+    "mixedOneTailedFactorial": 16.48880479,
+    "betweenTwoTailedContrast": 29.33614981,
+    "betweenOneTailedContrast": 21.98507305
+  },
+  "0.66": {
+    "betweenTwoTailedFactorial": 90.05730081,
+    "betweenOneTailedFactorial": 67.73047246,
+    "mixedTwoTailedFactorial": 22.5143252,
+    "mixedOneTailedFactorial": 16.93261812,
+    "betweenTwoTailedContrast": 30.01910027,
+    "betweenOneTailedContrast": 22.57682415
+  },
+  "0.67": {
+    "betweenTwoTailedFactorial": 92.15333124,
+    "betweenOneTailedFactorial": 69.54980653,
+    "mixedTwoTailedFactorial": 23.03833281,
+    "mixedOneTailedFactorial": 17.38745163,
+    "betweenTwoTailedContrast": 30.71777708,
+    "betweenOneTailedContrast": 23.18326884
+  },
+  "0.68": {
+    "betweenTwoTailedFactorial": 94.29954335,
+    "betweenOneTailedFactorial": 71.41593945,
+    "mixedTwoTailedFactorial": 23.57488584,
+    "mixedOneTailedFactorial": 17.85398486,
+    "betweenTwoTailedContrast": 31.43318112,
+    "betweenOneTailedContrast": 23.80531315
+  },
+  "0.69": {
+    "betweenTwoTailedFactorial": 96.49921486,
+    "betweenOneTailedFactorial": 73.33184336,
+    "mixedTwoTailedFactorial": 24.12480371,
+    "mixedOneTailedFactorial": 18.33296084,
+    "betweenTwoTailedContrast": 32.16640495,
+    "betweenOneTailedContrast": 24.44394779
+  },
+  "0.7": {
+    "betweenTwoTailedFactorial": 98.75593452,
+    "betweenOneTailedFactorial": 75.30077735,
+    "mixedTwoTailedFactorial": 24.68898363,
+    "mixedOneTailedFactorial": 18.82519434,
+    "betweenTwoTailedContrast": 32.91864484,
+    "betweenOneTailedContrast": 25.10025912
+  },
+  "0.71": {
+    "betweenTwoTailedFactorial": 101.073644,
+    "betweenOneTailedFactorial": 77.326326,
+    "mixedTwoTailedFactorial": 25.26841099,
+    "mixedOneTailedFactorial": 19.3315815,
+    "betweenTwoTailedContrast": 33.69121466,
+    "betweenOneTailedContrast": 25.775442
+  },
+  "0.72": {
+    "betweenTwoTailedFactorial": 103.4566869,
+    "betweenOneTailedFactorial": 79.4124445,
+    "mixedTwoTailedFactorial": 25.86417172,
+    "mixedOneTailedFactorial": 19.85311113,
+    "betweenTwoTailedContrast": 34.4855623,
+    "betweenOneTailedContrast": 26.47081483
+  },
+  "0.73": {
+    "betweenTwoTailedFactorial": 105.909867,
+    "betweenOneTailedFactorial": 81.56351204,
+    "mixedTwoTailedFactorial": 26.47746675,
+    "mixedOneTailedFactorial": 20.39087801,
+    "betweenTwoTailedContrast": 35.303289,
+    "betweenOneTailedContrast": 27.18783735
+  },
+  "0.74": {
+    "betweenTwoTailedFactorial": 108.4385168,
+    "betweenOneTailedFactorial": 83.78439511,
+    "mixedTwoTailedFactorial": 27.1096292,
+    "mixedOneTailedFactorial": 20.94609878,
+    "betweenTwoTailedContrast": 36.14617227,
+    "betweenOneTailedContrast": 27.9281317
+  },
+  "0.75": {
+    "betweenTwoTailedFactorial": 111.0485799,
+    "betweenOneTailedFactorial": 86.08052322,
+    "mixedTwoTailedFactorial": 27.76214498,
+    "mixedOneTailedFactorial": 21.52013081,
+    "betweenTwoTailedContrast": 37.0161933,
+    "betweenOneTailedContrast": 28.69350774
+  },
+  "0.76": {
+    "betweenTwoTailedFactorial": 113.7467097,
+    "betweenOneTailedFactorial": 88.45797987,
+    "mixedTwoTailedFactorial": 28.43667743,
+    "mixedOneTailedFactorial": 22.11449497,
+    "betweenTwoTailedContrast": 37.9155699,
+    "betweenOneTailedContrast": 29.48599329
+  },
+  "0.77": {
+    "betweenTwoTailedFactorial": 116.540389,
+    "betweenOneTailedFactorial": 90.92361281,
+    "mixedTwoTailedFactorial": 29.13509726,
+    "mixedOneTailedFactorial": 22.7309032,
+    "betweenTwoTailedContrast": 38.84679635,
+    "betweenOneTailedContrast": 30.30787094
+  },
+  "0.78": {
+    "betweenTwoTailedFactorial": 119.4380762,
+    "betweenOneTailedFactorial": 93.48516856,
+    "mixedTwoTailedFactorial": 29.85951904,
+    "mixedOneTailedFactorial": 23.37129214,
+    "betweenTwoTailedContrast": 39.81269205,
+    "betweenOneTailedContrast": 31.16172285
+  },
+  "0.79": {
+    "betweenTwoTailedFactorial": 122.4493843,
+    "betweenOneTailedFactorial": 96.15145809,
+    "mixedTwoTailedFactorial": 30.61234606,
+    "mixedOneTailedFactorial": 24.03786452,
+    "betweenTwoTailedContrast": 40.81646142,
+    "betweenOneTailedContrast": 32.05048603
+  },
+  "0.8": {
+    "betweenTwoTailedFactorial": 125.5853046,
+    "betweenOneTailedFactorial": 98.93256255,
+    "mixedTwoTailedFactorial": 31.39632615,
+    "mixedOneTailedFactorial": 24.73314064,
+    "betweenTwoTailedContrast": 41.86176819,
+    "betweenOneTailedContrast": 32.97752085
+  },
+  "0.81": {
+    "betweenTwoTailedFactorial": 128.8584861,
+    "betweenOneTailedFactorial": 101.8400914,
+    "mixedTwoTailedFactorial": 32.21462153,
+    "mixedOneTailedFactorial": 25.46002286,
+    "betweenTwoTailedContrast": 42.9528287,
+    "betweenOneTailedContrast": 33.94669715
+  },
+  "0.82": {
+    "betweenTwoTailedFactorial": 132.2835902,
+    "betweenOneTailedFactorial": 104.8875101,
+    "mixedTwoTailedFactorial": 33.07089755,
+    "mixedOneTailedFactorial": 26.22187753,
+    "betweenTwoTailedContrast": 44.09453007,
+    "betweenOneTailedContrast": 34.96250338
+  },
+  "0.83": {
+    "betweenTwoTailedFactorial": 135.877746,
+    "betweenOneTailedFactorial": 108.0905602,
+    "mixedTwoTailedFactorial": 33.96943649,
+    "mixedOneTailedFactorial": 27.02264005,
+    "betweenTwoTailedContrast": 45.29258199,
+    "betweenOneTailedContrast": 36.03018674
+  },
+  "0.84": {
+    "betweenTwoTailedFactorial": 139.6611421,
+    "betweenOneTailedFactorial": 111.4678067,
+    "mixedTwoTailedFactorial": 34.91528553,
+    "mixedOneTailedFactorial": 27.86695167,
+    "betweenTwoTailedContrast": 46.55371405,
+    "betweenOneTailedContrast": 37.15593556
+  },
+  "0.85": {
+    "betweenTwoTailedFactorial": 143.6578089,
+    "betweenOneTailedFactorial": 115.0413604,
+    "mixedTwoTailedFactorial": 35.91445223,
+    "mixedOneTailedFactorial": 28.76034009,
+    "betweenTwoTailedContrast": 47.88593631,
+    "betweenOneTailedContrast": 38.34712012
+  },
+  "0.86": {
+    "betweenTwoTailedFactorial": 147.8966671,
+    "betweenOneTailedFactorial": 118.8378482,
+    "mixedTwoTailedFactorial": 36.97416678,
+    "mixedOneTailedFactorial": 29.70946204,
+    "betweenTwoTailedContrast": 49.29888904,
+    "betweenOneTailedContrast": 39.61261605
+  },
+  "0.87": {
+    "betweenTwoTailedFactorial": 152.4129632,
+    "betweenOneTailedFactorial": 122.8897406,
+    "mixedTwoTailedFactorial": 38.10324081,
+    "mixedOneTailedFactorial": 30.72243516,
+    "betweenTwoTailedContrast": 50.80432107,
+    "betweenOneTailedContrast": 40.96324688
+  },
+  "0.88": {
+    "betweenTwoTailedFactorial": 157.250275,
+    "betweenOneTailedFactorial": 127.2372081,
+    "mixedTwoTailedFactorial": 39.31256875,
+    "mixedOneTailedFactorial": 31.80930203,
+    "betweenTwoTailedContrast": 52.41675833,
+    "betweenOneTailedContrast": 42.41240271
+  },
+  "0.89": {
+    "betweenTwoTailedFactorial": 162.4633834,
+    "betweenOneTailedFactorial": 131.9307799,
+    "mixedTwoTailedFactorial": 40.61584584,
+    "mixedOneTailedFactorial": 32.98269498,
+    "betweenTwoTailedContrast": 54.15446112,
+    "betweenOneTailedContrast": 43.97692664
+  },
+  "0.9": {
+    "betweenTwoTailedFactorial": 168.1225048,
+    "betweenOneTailedFactorial": 137.0352651,
+    "mixedTwoTailedFactorial": 42.03062621,
+    "mixedOneTailedFactorial": 34.25881626,
+    "betweenTwoTailedContrast": 56.04083494,
+    "betweenOneTailedContrast": 45.67842168
+  },
+  "0.91": {
+    "betweenTwoTailedFactorial": 174.3197407,
+    "betweenOneTailedFactorial": 142.6357299,
+    "mixedTwoTailedFactorial": 43.57993517,
+    "mixedOneTailedFactorial": 35.65893248,
+    "betweenTwoTailedContrast": 58.10658023,
+    "betweenOneTailedContrast": 47.54524331
+  },
+  "0.92": {
+    "betweenTwoTailedFactorial": 181.1793057,
+    "betweenOneTailedFactorial": 148.8469844,
+    "mixedTwoTailedFactorial": 45.29482642,
+    "mixedOneTailedFactorial": 37.21174609,
+    "betweenTwoTailedContrast": 60.3931019,
+    "betweenOneTailedContrast": 49.61566146
+  },
+  "0.93": {
+    "betweenTwoTailedFactorial": 188.8745598,
+    "betweenOneTailedFactorial": 155.8293863,
+    "mixedTwoTailedFactorial": 47.21863996,
+    "mixedOneTailedFactorial": 38.95734657,
+    "betweenTwoTailedContrast": 62.95818661,
+    "betweenOneTailedContrast": 51.94312876
+  },
+  "0.94": {
+    "betweenTwoTailedFactorial": 197.6581347,
+    "betweenOneTailedFactorial": 163.8168169,
+    "mixedTwoTailedFactorial": 49.41453369,
+    "mixedOneTailedFactorial": 40.95420423,
+    "betweenTwoTailedContrast": 65.88604491,
+    "betweenOneTailedContrast": 54.60560564
+  },
+  "0.95": {
+    "betweenTwoTailedFactorial": 207.9195147,
+    "betweenOneTailedFactorial": 173.1701902,
+    "mixedTwoTailedFactorial": 51.97987869,
+    "mixedOneTailedFactorial": 43.29254755,
+    "betweenTwoTailedContrast": 69.30650492,
+    "betweenOneTailedContrast": 57.72339673
+  },
+  "0.96": {
+    "betweenTwoTailedFactorial": 220.3070579,
+    "betweenOneTailedFactorial": 184.4909423,
+    "mixedTwoTailedFactorial": 55.07676448,
+    "mixedOneTailedFactorial": 46.12273558,
+    "betweenTwoTailedContrast": 73.43568597,
+    "betweenOneTailedContrast": 61.49698077
+  },
+  "0.97": {
+    "betweenTwoTailedFactorial": 236.0271286,
+    "betweenOneTailedFactorial": 198.8995291,
+    "mixedTwoTailedFactorial": 59.00678216,
+    "mixedOneTailedFactorial": 49.72488227,
+    "betweenTwoTailedContrast": 78.67570955,
+    "betweenOneTailedContrast": 66.29984303
+  },
+  "0.98": {
+    "betweenTwoTailedFactorial": 257.7628851,
+    "betweenOneTailedFactorial": 218.8918961,
+    "mixedTwoTailedFactorial": 64.44072127,
+    "mixedOneTailedFactorial": 54.72297402,
+    "betweenTwoTailedContrast": 85.92096169,
+    "betweenOneTailedContrast": 72.96396535
+  },
+  "0.99": {
+    "betweenTwoTailedFactorial": 293.9644496,
+    "betweenOneTailedFactorial": 252.345663,
+    "mixedTwoTailedFactorial": 73.49111239,
+    "mixedOneTailedFactorial": 63.08641575,
+    "betweenTwoTailedContrast": 97.98814985,
+    "betweenOneTailedContrast": 84.115221
+  }
+}
