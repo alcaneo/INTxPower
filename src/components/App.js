@@ -58,7 +58,7 @@ class App extends Component {
             B: parseFloat(queryParameters.get('B')) || 0.4,
             C: parseFloat(queryParameters.get('C')) || 0.4,
             D: parseFloat(queryParameters.get('D')) || 0.6,
-            algo: queryParameters.get('algo') || Algorithms.ALGO_TWO_TAILED_TESTING,
+            algo: queryParameters.get('algo') || Algorithms.ALGO_BETWEEN_TWO_TAILED_FACTORIAL,
             dialogAboutSetOpen: false,
             dialogCohenDSetOpen: false
         }
@@ -207,7 +207,7 @@ class App extends Component {
                                                                 A small simple effect size is <i>d</i> = 0.20 (i.e., <i>r</i> = .10 or η<sub>p</sub><sup>2</sup> = .01)
                                                             </li>
                                                             <li>
-                                                                A medium simple effect size is <i>d</i> = 0.35 (i.e., <i>r</i> = .175 or η<sub>p</sub><sup>2</sup> = .03)
+                                                                A median simple effect size is <i>d</i> = 0.35 (i.e., <i>r</i> = .175 or η<sub>p</sub><sup>2</sup> = .03)
                                                             </li>
                                                             <li>
                                                                 A large simple effect size is <i>d</i> = 0.50 (i.e., <i>r</i> = .25 or η<sub>p</sub><sup>2</sup> = .06)
@@ -297,7 +297,7 @@ class App extends Component {
                                                                 <FormControlLabel
                                                                     control={<Radio/>}
                                                                     label=''
-                                                                    value={Algorithms.ALGO_TWO_TAILED_TESTING}/>
+                                                                    value={Algorithms.ALGO_BETWEEN_TWO_TAILED_FACTORIAL}/>
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
                                                                 Between
@@ -314,7 +314,7 @@ class App extends Component {
                                                                 <FormControlLabel
                                                                     control={<Radio/>}
                                                                     label=''
-                                                                    value={Algorithms.ALGO_ONE_TAILED_TESTING}/>
+                                                                    value={Algorithms.ALGO_BETWEEN_ONE_TAILED_FACTORIAL}/>
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
                                                                 Between
@@ -331,7 +331,7 @@ class App extends Component {
                                                                 <FormControlLabel
                                                                     control={<Radio/>}
                                                                     label=''
-                                                                    value={Algorithms.ALGO_MIXED_PARTICIPANTS}/>
+                                                                    value={Algorithms.ALGO_MIXED_TWO_TAILED_FACTORIAL}/>
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
                                                                 Mixed
@@ -348,13 +348,47 @@ class App extends Component {
                                                                 <FormControlLabel
                                                                     control={<Radio/>}
                                                                     label=''
-                                                                    value={Algorithms.ALGO_PLANNED_CONTRAST}/>
+                                                                    value={Algorithms.ALGO_MIXED_ONE_TAILED_FACTORIAL}/>
+                                                            </TableCell>
+                                                            <TableCell align="center" colSpan={3}>
+                                                                Mixed
+                                                            </TableCell>
+                                                            <TableCell align="center" colSpan={3}>
+                                                                Two-tailed
+                                                            </TableCell>
+                                                            <TableCell align="center" colSpan={3}>
+                                                                Factorial
+                                                            </TableCell>
+                                                        </TableRow>
+                                                        <TableRow>
+                                                            <TableCell align="center" colSpan={2}>
+                                                                <FormControlLabel
+                                                                    control={<Radio/>}
+                                                                    label=''
+                                                                    value={Algorithms.ALGO_BETWEEN_TWO_TAILED_CONTRAST}/>
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
                                                                 Between
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
                                                                 Two-tailed
+                                                            </TableCell>
+                                                            <TableCell align="center" colSpan={3}>
+                                                                Contrast
+                                                            </TableCell>
+                                                        </TableRow>
+                                                        <TableRow>
+                                                            <TableCell align="center" colSpan={2}>
+                                                                <FormControlLabel
+                                                                    control={<Radio/>}
+                                                                    label=''
+                                                                    value={Algorithms.ALGO_BETWEEN_ONE_TAILED_CONTRAST}/>
+                                                            </TableCell>
+                                                            <TableCell align="center" colSpan={3}>
+                                                                Between
+                                                            </TableCell>
+                                                            <TableCell align="center" colSpan={3}>
+                                                                One-tailed
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
                                                                 Contrast
@@ -379,24 +413,24 @@ class App extends Component {
                                     }}>
                                         <Link sx={{display: 'block'}}
                                               onClick={() => {
-                                                this.setDefaultParameters(Algorithms.DEFAULT_MEDIUM_SIZED_REVERSED_INTERACTION)
+                                                this.setDefaultParameters(Algorithms.DEFAULT_TYPICAL_REVERSED_INTERACTION)
                                               }}
                                               component='button'>
-                                            A medium-sized reversed interaction
+                                            A typical reversed interaction
                                         </Link>
                                         <Link sx={{display: 'block'}}
                                               onClick={() => {
-                                                  this.setDefaultParameters(Algorithms.DEFAULT_MEDIUM_SIZED_FULLY_ATTENUATED_INTERACTION)
+                                                  this.setDefaultParameters(Algorithms.DEFAULT_TYPICAL_FULLY_ATTENUATED_INTERACTION)
                                               }}
                                               component='button'>
-                                            A medium-sized fully attenuated interaction
+                                            A typical fully attenuated interaction
                                         </Link>
                                         <Link sx={{display: 'block'}}
                                               onClick={() => {
-                                                  this.setDefaultParameters(Algorithms.DEFAULT_MEDIUM_SIZED_PARTIALLY_ATTENUATED_INTERACTION)
+                                                  this.setDefaultParameters(Algorithms.DEFAULT_TYPICAL_PARTIALLY_ATTENUATED_INTERACTION)
                                               }}
                                               component='button'>
-                                            A medium-sized partially attenuated interaction
+                                            A typical partially attenuated interaction
                                         </Link>
                                     </CardContent>
                                 </Card>
@@ -444,7 +478,7 @@ class App extends Component {
                                             </p>
                                             <p>
                                                 We recommend using the following empirically derived benchmarks to describe
-                                                small, medium, and large simple effects: <i>d</i> = 0.20, 0.35, and 0.50,
+                                                small, median, and large simple effects: <i>d</i> = 0.20, 0.35, and 0.50,
                                                 respectively (<Link href='https://doi.org/10.3389/fpsyg.2019.00813'
                                                                     target='_blank'>see Schäfer & Schwarz, 2019</Link>)
                                             </p>
