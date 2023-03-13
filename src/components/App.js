@@ -426,7 +426,7 @@ class App extends Component {
                                                                 Mixed
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
-                                                                Two-tailed
+                                                                One-tailed
                                                             </TableCell>
                                                             <TableCell align="center" colSpan={3}>
                                                                 Factorial
