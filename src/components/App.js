@@ -271,13 +271,13 @@ class App extends Component {
                                                         Our recommendations:
                                                         <ul>
                                                             <li>
-                                                                A small simple effect size is <i>d</i> = 0.20 (i.e., <i>r</i> = .10 or η<sub>p</sub><sup>2</sup> = .01)
+                                                                A relatively small simple effect size is <i>d</i> = 0.20 (i.e., <i>r</i> = .10 or η<sub>p</sub><sup>2</sup> = .01)
                                                             </li>
                                                             <li>
                                                                 A median simple effect size is <i>d</i> = 0.35 (i.e., <i>r</i> = .175 or η<sub>p</sub><sup>2</sup> = .03)
                                                             </li>
                                                             <li>
-                                                                A large simple effect size is <i>d</i> = 0.50 (i.e., <i>r</i> = .25 or η<sub>p</sub><sup>2</sup> = .06)
+                                                                A relatively large simple effect size is <i>d</i> = 0.50 (i.e., <i>r</i> = .25 or η<sub>p</sub><sup>2</sup> = .06)
                                                             </li>
                                                         </ul>
                                                     </p>
@@ -550,7 +550,7 @@ class App extends Component {
                                             </p>
                                             <p>
                                                 We recommend using the following empirically derived benchmarks to describe
-                                                small, median, and large simple effects: <i>d</i> = 0.20, 0.35, and 0.50,
+                                                relatively small, median, and relatively large simple effects: <i>d</i> = 0.20, 0.35, and 0.50,
                                                 respectively (<Link href='https://doi.org/10.3389/fpsyg.2019.00813'
                                                                     target='_blank'>see Schäfer & Schwarz, 2019</Link>)
                                             </p>
