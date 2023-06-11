@@ -592,7 +592,8 @@ class App extends Component {
                                 <CardContent>
                                     Please cite as follows: Sommet, N., Weissman, D. L., Cheutin, N., & Elliot, A. J. (2022).<br />
                                     How many participants do I need to test an interaction? Conducting an appropriate power analysis and achieving sufficient power to detect an interaction.<br />
-                                    <Link href='https://doi.org/10.31219/osf.io/xhe3u' target='_blank'>https://doi.org/10.31219/osf.io/xhe3u</Link>
+                                    <i>Advances in Methods and Practices in Psychological Science, 6</i>(2), 1-21.<br />
+                                    <Link href='https://doi.org/10.1177/25152459231178728' target='_blank'>https://doi.org/10.1177/25152459231178728</Link>
                                 </CardContent>
                             </Card>
                         </Box>
