@@ -476,7 +476,11 @@ class App extends Component {
                             <Box>
                                 <Card>
                                     <CardHeader title="Not sure where to start?"
-                                                subheader='Consider one of the following:'/>
+                                                subheader={
+                                                    <Typography>
+                                                        See <Link href='https://www.youtube.com/watch?v=_ENvQF2aNmE' target='_blank'>this short video guide</Link> or consider one of the following:
+                                                    </Typography>
+                                                } />
                                     <Divider variant='middle'/>
                                     <CardContent sx={{
                                         [`& button`]: {
@@ -590,9 +594,9 @@ class App extends Component {
                         <Box>
                             <Card>
                                 <CardContent>
-                                    Please cite as follows: Sommet, N., Weissman, D. L., Cheutin, N., & Elliot, A. J. (2022).<br />
-                                    How many participants do I need to test an interaction? Conducting an appropriate power analysis and achieving sufficient power to detect an interaction.<br />
-                                    <i>Advances in Methods and Practices in Psychological Science, 6</i>(2), 1-21.<br />
+                                    Please cite as follows: Sommet, N., Weissman, D. L., Cheutin, N., & Elliot, A. J. (2023).
+                                    How many participants do I need to test an interaction? Conducting an appropriate power analysis and achieving sufficient power to detect an interaction.
+                                    <i>Advances in Methods and Practices in Psychological Science, 6</i>(2), 1-21.
                                     <Link href='https://doi.org/10.1177/25152459231178728' target='_blank'>https://doi.org/10.1177/25152459231178728</Link>
                                 </CardContent>
                             </Card>
